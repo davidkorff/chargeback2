@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+		<meta charset="UTF-8"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="theme-color" content="#80bd00">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="pingback" href="http://wordpress-25327-54094-223520.cloudwaysapps.com/xmlrpc.php">
+		
+	<title>Annual report is available for public inspection &#8211; Chargeback Recovery &amp; Logistics</title>
+<link rel='dns-prefetch' href='http://code.tidio.co/' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="Chargeback Recovery &amp; Logistics &raquo; Feed" href="../../../../feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Chargeback Recovery &amp; Logistics &raquo; Comments Feed" href="../../../../comments/feed/index.html" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/wordpress-25327-54094-223520.cloudwaysapps.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.8"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,56826,8203,55356,56819),0,0),c=j.toDataURL(),b===c&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55358,56794,8205,9794,65039),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55358,56794,8203,9794,65039),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='ot-google-fonts-css'  href='http://fonts.googleapis.com/css?family=Roboto:300,300italic,regular,italic,500,500italic,700,700italic' type='text/css' media='all' />
+<link rel='stylesheet' id='ff-logo-css'  href='../../../../wp-content/plugins/fresh-framework/framework/extern/ff-logo/ff-logo.css?ver=4.8' type='text/css' media='all' />
+<link rel='stylesheet' id='contact-form-7-css'  href='../../../../wp-content/plugins/contact-form-7/includes/css/styles.css?ver=4.8' type='text/css' media='all' />
+<link rel='stylesheet' id='rs-plugin-settings-css'  href='../../../../wp-content/plugins/revslider/public/assets/css/settings.css?ver=5.4.3.2' type='text/css' media='all' />
+<style id='rs-plugin-settings-inline-css' type='text/css'>
+#rs-demo-id {}
+</style>
+<link rel='stylesheet' id='font-awesome-css'  href='../../../../wp-content/plugins/js_composer/assets/lib/bower/font-awesome/css/font-awesome.min.css?ver=5.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='js_composer_front-css'  href='../../../../wp-content/plugins/js_composer/assets/css/js_composer.min.css?ver=5.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='core-extend-css'  href='../../../../wp-content/plugins/core-extend/assets/css/core-extend.css?ver=1' type='text/css' media='all' />
+<link rel='stylesheet' id='mnky_main-css'  href='../../../../wp-content/themes/fintech-wp/style.css?ver=1.0.6' type='text/css' media='all' />
+<style id='mnky_main-inline-css' type='text/css'>
+input[type='submit'], button, #wp-calendar #today, .pricing-box .plan-badge, .scrollToTop, .widget-area .widget .tagcloud a:hover, blockquote.box-left, blockquote.box-right, blockquote.callout, .article-labels span, .archive-style-2:nth-child(odd) .post-content-bg, .archive-style-2.layout-two-column:nth-child(4n) .post-content-bg, .archive-style-2.layout-two-column:nth-child(4n+1) .post-content-bg, .rating-bar-value, .mp-container .mp-comment, #mobile-site-navigation .mobile-menu-header, #site-navigation-side ul li.menu-button-theme a, #header-container .menu-toggle-wrapper:hover span {background-color:#80bd00;}	input[type='submit'], button{border-bottom-color: #5d9a00;}input[type=button]:hover, input[type='submit']:hover, button:hover{border-bottom-color: #5d9a00; background-color: #5d9a00;}.archive-layout.format-video .post-preview:before, .archive-layout.format-gallery .post-preview:before, .archive-layout.format-link .post-preview:before{background-color:rgba(128,189,0,0.70);}.archive-layout.format-video .post-preview:hover:before, .archive-layout.format-gallery .post-preview:hover:before, .archive-layout.format-link .post-preview:hover:before{background-color:rgba(128,189,0,0.80);}::selection{background-color:#f39c12;}::-moz-selection{background-color:#f39c12;}.archive-style-2:nth-child(even) .post-content-bg, .archive-style-2.layout-two-column .post-content-bg{background-color:#f39c12;}		.themecolor_txt, a, a:hover, blockquote.center p, #comments span.required, #comments .comment-reply-link:hover, #comments h3.comment-reply-title #cancel-comment-reply-link:hover, #comments .comment-meta a:hover, .vc_toggle_default .vc_toggle_title .vc_toggle_icon:after, .single-post .entry-header h5 a:hover, .entry-header .entry-meta a:hover, #comments p.comment-notes:before, p.logged-in-as:before, p.must-log-in:before, .sticky .post-preview:after, .pagination a:hover, .page-links a:hover, .format-chat p:nth-child(odd):before, #comments .comment-navigation a:hover, .separator_w_icon i, .mnky_testimonials-slider .flex-control-paging li a.flex-active:after, .mnky-content-slider .flex-control-paging li a.flex-active:after, #site-navigation ul li a:hover, #site-navigation ul li.current-menu-item > a, #site-navigation ul li.megamenu ul li ul li a:hover, #site-navigation ul li.megamenu ul li.current-menu-item > a, .mnky-posts .mp-title a:hover, .mp-author a:hover, .entry-meta-blog .meta-author:hover, .meta-comments a:hover, .archive-layout .entry-category a:hover, .mp-category a:hover, .rating_aspect_value .rating-value, .rating_summary_value, .rating-stars, #mobile-site-navigation ul > li > a:hover, .mnky_team_wrapper .team_member_position, .mnky_team_wrapper .team_content_container i, .mnky_breadcrumbs a:hover span, .site-links .search_button:hover, .site-links .header_cart_link i:hover, .menu-toggle-wrapper:hover, .footer-sidebar .widget a:hover, .site-info .widget a:hover {color:#80bd00;}			.archive-layout .entry-category, .archive-layout .entry-category a, .single-post .entry-header h5, .single-post .entry-header h5 a, .mnky_team_wrapper:hover .team_content_container i, .mnky_breadcrumbs span {color:#f39c12;}		input:focus, textarea:focus, blockquote.border p, blockquote.bold:after, .rating-bar-value:after, #site-navigation-side ul li.menu-button-theme a, #site-navigation-side ul li.menu-button-outline-theme a, #sidebar .widget.widget_nav_menu ul li.current-menu-item a, #sidebar.float-right .widget.widget_nav_menu ul li.current-menu-item a {border-color:#80bd00;}		.mp-container .mp-comment:after {border-left-color:#80bd00; border-top-color:#80bd00;}		#main, #site-header #header-container, #top-bar, #mobile-site-header, #container, .inner, .page-header, .header-search, .header-search .search-input {max-width:1200px; }#site-navigation ul li.megamenu > ul{max-width:1200px; left: calc(50% - 600px);}@media only screen and (max-width : 1200px){#site-navigation .menu-container ul li.megamenu > ul{left:0;}}@media only screen and (max-width : 1260px){.searchform-wrapper {padding:0 30px;} .header-search .toggle-header-search {right:30px;}}#mobile-site-header{width:100% !important;}#site-header, #site-header #header-wrapper {height:100px;}#site-header, #site-header #header-wrapper, #mobile-site-header {background-color:#ffffff;}#site-header #header-wrapper {box-shadow:0px 1px 3px rgba(0,0,0,0.12);} #site-header.header-overlay #header-wrapper {box-shadow:none;}#top-bar-wrapper, #top-bar .widget_nav_menu ul li ul{background:#002238}#top-bar-wrapper .widget, #top-bar-wrapper .widget a, #top-bar .widget-title, #top-bar .search-input {color:#ffffff}#top-bar-wrapper .widget a:hover{color:#ffffff}#site-navigation ul > li > a, .site-links .menu-toggle-wrapper, .site-links .header_cart_wrapper, .site-links .search_button, #site-logo .site-title, #site-navigation #menu-sidebar {line-height:100px}.header-search .search-input {height:100px}#site-navigation ul li a, .site-links .search_button, .site-links .header_cart_link i, .toggle-mobile-menu i, #mobile-site-header #mobile-site-logo h1.site-title a, #mobile-site-header .toggle-mobile-menu i, .header-search .search-input, .menu-toggle-wrapper {color:#717e9e}.header-search .toggle-header-search span, #header-container .menu-toggle-wrapper span {background-color:#717e9e}#site-navigation ul li ul li a, #site-navigation ul li ul li a:hover, #site-navigation ul li ul li.current-menu-item > a {color:#717e9e}#site-navigation ul li.megamenu > ul > li > a, #site-navigation ul li.megamenu > ul > li > a:hover{color:#0b3b5b !important}#mobile-site-header{background:#ffffff}#mobile-site-header .toggle-mobile-menu i, #mobile-site-header #mobile-site-logo h1.site-title a {color:#002238}#site-logo {margin-top:10px}#mobile-site-header #site-logo img.retina-logo{width:80%; height:80%;}.page-sidebar .widget{color:#666677}.page-sidebar .widget .widget-title:after  {background:#f39c12}.meta-date {margin-right:0px;}.post-preview {max-width:48.2%; float:left; margin-bottom:0px;} .entry-content {width:48.2%; float:right;} @media only screen and (max-width: 979px) {.post-preview {max-width:100%; float:none; margin-bottom:40px;} .entry-content {width:100%; float:none;} }body, select, textarea, input, button{font-family: "Roboto",Arial,Helvetica,sans-serif;}body{color:#666677; font-size:16px}#content h4.wpb_toggle, .mp-author a, .entry-meta-blog .meta-author, .meta-comments a, .entry-header .entry-meta, .entry-header .entry-meta a, .pagination a, .page-links a, #comments .comment-meta a, #comments .comment-reply-link, #comments h3.comment-reply-title #cancel-comment-reply-link, #comments .comment-navigation a, .mnky_breadcrumbs a span, .mnky-content-box, .mnky-accordion.vc_tta-style-classic.vc_tta.vc_general .vc_tta-panel-title > a {color:#666677;}#site-navigation, #site-navigation ul li a, .site-links .menu-toggle-wrapper{font-family: "Roboto",Arial,Helvetica,sans-serif;;font-weight:500;}.single-post .entry-content, .single-post .post_lead_content {font-size:16px}h1{font-size:30px}h2{font-size:24px}h3{font-size:20px}h4{font-size:18px}h5{font-size:16px}h6{font-size:14px}h1, h2, h3, h4, h5, h6, h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {color:#0b3b5b}#site-logo .site-title a:hover, #comments .comment-author .fn, .mnky_counter_wrapper .count_data, .mnky-accordion.vc_tta-style-classic.vc_tta.vc_general .vc_tta-panel.vc_active .vc_tta-panel-title > a {color:#0b3b5b}.footer-sidebar{background-color:#002238}.footer-sidebar .vc_col-sm-3:nth-child(1) {width:20%}.footer-sidebar .vc_col-sm-3:nth-child(2) {width:20%}.footer-sidebar .vc_col-sm-3:nth-child(3) {width:20%}.footer-sidebar .vc_col-sm-3:nth-child(4) {width:40%}.site-info{background-color:#002238}.site-info {text-align:center}.scrollToTop.scrollactive {    bottom: 55px;}
+</style>
+<link rel='stylesheet' id='smile-modal-style-css'  href='../../../../wp-content/plugins/convertplug/modules/modal/assets/css/modal.min.css?ver=4.8' type='text/css' media='all' />
+<link rel='stylesheet' id='cp-perfect-scroll-style-css'  href='../../../../wp-content/plugins/convertplug/admin/assets/css/perfect-scrollbar.min.css?ver=4.8' type='text/css' media='all' />
+<link rel='stylesheet' id='fancybox-css'  href='../../../../wp-content/plugins/easy-fancybox/fancybox/jquery.fancybox-1.3.8.min.css?ver=1.6' type='text/css' media='screen' />
+<link rel='stylesheet' id='style.owl.carousel-css'  href='../../../../wp-content/plugins/owl-carousel/css/owl.carousel.css?ver=4.8' type='text/css' media='all' />
+<link rel='stylesheet' id='style.owl.carousel.theme-css'  href='../../../../wp-content/plugins/owl-carousel/css/owl.theme.css?ver=4.8' type='text/css' media='all' />
+<link rel='stylesheet' id='style.owl.carousel.transitions-css'  href='../../../../wp-content/plugins/owl-carousel/css/owl.transitions.css?ver=4.8' type='text/css' media='all' />
+<link rel='stylesheet' id='style.owl.carousel.styles-css'  href='../../../../wp-content/plugins/owl-carousel/css/styles.css?ver=4.8' type='text/css' media='all' />
+<script type='text/javascript'>
+/* <![CDATA[ */
+var slide_in = {"demo_dir":"http:\/\/wordpress-25327-54094-223520.cloudwaysapps.com\/wp-content\/plugins\/convertplug\/modules\/slide_in\/assets\/demos"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../../../../wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../../../wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../../../wp-content/plugins/revslider/public/assets/js/jquery.themepunch.tools.min.js?ver=5.4.3.2'></script>
+<script type='text/javascript' src='../../../../wp-content/plugins/revslider/public/assets/js/jquery.themepunch.revolution.min.js?ver=5.4.3.2'></script>
+<script type='text/javascript' src='../../../../wp-content/plugins/typed/js/typed.js?ver=4.8'></script>
+<script type='text/javascript' src='../../../../wp-content/plugins/typed/js/frontend.js?ver=4.8'></script>
+<script type='text/javascript' src='../../../../wp-content/plugins/owl-carousel/js/owl.carousel.js?ver=4.8'></script>
+<script type='text/javascript' src='../../../../wp-content/plugins/owl-carousel/js/script.js?ver=4.8'></script>
+<link rel='https://api.w.org/' href='../../../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../../xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../../wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='Looking for 100 talented professionals to join our team' href='../../../../index.html?p=247' />
+<link rel='next' title='Best shots from financial technology conference 2016' href='../../../../index.html?p=326' />
+<meta name="generator" content="WordPress 4.8" />
+<link rel="canonical" href="../../../../index.html?p=321" />
+<link rel='shortlink' href='../../../../index.html?p=321' />
+<link rel="alternate" type="application/json+oembed" href="../../../../wp-json/oembed/1.0/embed?url=http%253A%252F%252Fwordpress-25327-54094-223520.cloudwaysapps.com%252F2016%252F09%252F04%252Fannual-report-is-available-for-public-inspection%252F" />
+<link rel="alternate" type="text/xml+oembed" href="../../../../wp-json/oembed/1.0/embed?url=http%253A%252F%252Fwordpress-25327-54094-223520.cloudwaysapps.com%252F2016%252F09%252F04%252Fannual-report-is-available-for-public-inspection%252F&amp;format=xml" />
+       <style type="text/css">
+           #1{
+				
+		   background: #80bd00;
+		   
+           		   width : 8em;
+		   		   height : 2.5em;
+		   
+           color: ;
+           border-color: white;
+           }
+		   #1:hover{
+		   background: #1e73be;
+		   }
+		          </style>
+		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+		<meta name="generator" content="Powered by Visual Composer - drag and drop page builder for WordPress."/>
+<!--[if lte IE 9]><link rel="stylesheet" type="text/css" href="http://wordpress-25327-54094-223520.cloudwaysapps.com/wp-content/plugins/js_composer/assets/css/vc_lte_ie9.min.css" media="screen"><![endif]--><meta name="generator" content="Powered by Slider Revolution 5.4.3.2 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface." />
+<link rel="icon" href="../../../../wp-content/uploads/2017/06/cropped-emoticon-32x32.png" sizes="32x32" />
+<link rel="icon" href="../../../../wp-content/uploads/2017/06/cropped-emoticon-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../../../wp-content/uploads/2017/06/cropped-emoticon-180x180.png" />
+<meta name="msapplication-TileImage" content="http://wordpress-25327-54094-223520.cloudwaysapps.com/wp-content/uploads/2017/06/cropped-emoticon-270x270.png" />
+<script type="text/javascript">function setREVStartSize(e){
+				try{ var i=jQuery(window).width(),t=9999,r=0,n=0,l=0,f=0,s=0,h=0;					
+					if(e.responsiveLevels&&(jQuery.each(e.responsiveLevels,function(e,f){f>i&&(t=r=f,l=e),i>f&&f>r&&(r=f,n=e)}),t>r&&(l=n)),f=e.gridheight[l]||e.gridheight[0]||e.gridheight,s=e.gridwidth[l]||e.gridwidth[0]||e.gridwidth,h=i/s,h=h>1?1:h,f=Math.round(h*f),"fullscreen"==e.sliderLayout){var u=(e.c.width(),jQuery(window).height());if(void 0!=e.fullScreenOffsetContainer){var c=e.fullScreenOffsetContainer.split(",");if (c) jQuery.each(c,function(e,i){u=jQuery(i).length>0?u-jQuery(i).outerHeight(!0):u}),e.fullScreenOffset.split("%").length>1&&void 0!=e.fullScreenOffset&&e.fullScreenOffset.length>0?u-=jQuery(window).height()*parseInt(e.fullScreenOffset,0)/100:void 0!=e.fullScreenOffset&&e.fullScreenOffset.length>0&&(u-=parseInt(e.fullScreenOffset,0))}f=u}else void 0!=e.minHeight&&f<e.minHeight&&(f=e.minHeight);e.c.closest(".rev_slider_wrapper").css({height:f})					
+				}catch(d){console.log("Failure at Presize of Slider:"+d)}
+			};</script>
+
+<!-- Easy FancyBox 1.6 using FancyBox 1.3.8 - RavanH (http://status301.net/wordpress-plugins/easy-fancybox/) -->
+<script type="text/javascript">
+/* <![CDATA[ */
+var fb_timeout = null;
+var fb_opts = { 'overlayShow' : true, 'hideOnOverlayClick' : true, 'showCloseButton' : true, 'margin' : 20, 'centerOnScroll' : true, 'enableEscapeButton' : true, 'autoScale' : true };
+var easy_fancybox_handler = function(){
+	/* IMG */
+	var fb_IMG_select = 'a[href*=".jpg"]:not(.nolightbox,li.nolightbox>a), area[href*=".jpg"]:not(.nolightbox), a[href*=".jpeg"]:not(.nolightbox,li.nolightbox>a), area[href*=".jpeg"]:not(.nolightbox), a[href*=".png"]:not(.nolightbox,li.nolightbox>a), area[href*=".png"]:not(.nolightbox), a[href*=".webp"]:not(.nolightbox,li.nolightbox>a), area[href*=".webp"]:not(.nolightbox)';
+	jQuery(fb_IMG_select).addClass('fancybox image');
+	var fb_IMG_sections = jQuery('div.gallery ');
+	fb_IMG_sections.each(function() { jQuery(this).find(fb_IMG_select).attr('rel', 'gallery-' + fb_IMG_sections.index(this)); });
+	jQuery('a.fancybox, area.fancybox, li.fancybox a').fancybox( jQuery.extend({}, fb_opts, { 'transitionIn' : 'elastic', 'easingIn' : 'easeOutBack', 'transitionOut' : 'elastic', 'easingOut' : 'easeInBack', 'opacity' : false, 'hideOnContentClick' : false, 'titleShow' : true, 'titlePosition' : 'over', 'titleFromAlt' : true, 'showNavArrows' : true, 'enableKeyboardNav' : true, 'cyclic' : false }) );
+}
+var easy_fancybox_auto = function(){
+	/* Auto-click */
+	setTimeout(function(){jQuery('#fancybox-auto').trigger('click')},1000);
+}
+/* ]]> */
+</script>
+<noscript><style type="text/css"> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript></head>
+	
+<body class="post-template-default single single-post postid-321 single-format-standard sticky-sidebar wpb-js-composer js-comp-ver-5.1.1 vc_responsive" id="site-body" itemscope itemtype="http://schema.org/WebPage">
+		
+	<div id="wrapper">
+		
+	<div id="top-bar-wrapper" class="clearfix">
+		<div id="top-bar" itemscope itemtype="http://schema.org/WPSideBar">
+							<div id="topleft-widget-area" class="clearfix">
+					<div id="text-6" class="widget widget_text">			<div class="textwidget"><div class="clearfix mnky_custom-list-item li_small last"><i class="fa fa-phone" style="color:#80bd00"></i>877-586-2009 x 115</div></div>
+		</div><div id="text-7" class="widget widget_text">			<div class="textwidget"><div class="clearfix mnky_custom-list-item li_small last"><i class="fa fa-envelope" style="color:#80bd00"></i>info@chargebackrecovery.com</div></div>
+		</div>				</div>
+				
+			
+							<div id="topright-widget-area" class="clearfix">
+					<div id="text-17" class="widget widget_text">			<div class="textwidget"><span class="mnky-font-icon change-color" style="color:#80bd00;"><i class="fa fa-linkedin" style="font-size:22px; color:#666677; padding-left:0px; padding-right:30px;"></i></span><span class="mnky-font-icon change-color" style="color:#80bd00;"><i class="fa fa-facebook" style="font-size:22px; color:#666677; padding-left:0px; padding-right:30px;"></i></span></div>
+		</div>				</div>
+				
+		</div>
+	</div>
+	
+		
+			
+
+
+	
+<header id="mobile-site-header" class="mobile-header">
+	<div id="mobile-site-logo">
+		<a href="../../../../index.html">
+				<img src="../../../../wp-content/uploads/2017/03/logo_co.jpg" width="80%" height="80%" alt="Chargeback Recovery &amp; Logistics" class="default-logo" />
+				<img src="../../../../wp-content/uploads/2017/03/logo_co.jpg" width="80%" height="80%" alt="Chargeback Recovery &amp; Logistics" class="retina-logo" />
+			</a>	</div>	
+	
+	
+	
+	<a href="../../../../index.html?p=321#mobile-site-navigation" class="toggle-mobile-menu"><i class="fa fa-bars"></i></a>	
+</header>	
+	
+	
+
+	<header id="site-header" class="header-style-default" itemscope itemtype="http://schema.org/WPHeader">
+		<div id="header-wrapper">
+			<div id="header-container" class="clearfix">
+				<div id="site-logo">
+					<a href="../../../../index.html">
+				<img src="../../../../wp-content/uploads/2017/03/logo_co.jpg" width="" height="" alt="Chargeback Recovery &amp; Logistics" class="default-logo" />
+				<img src="../../../../wp-content/uploads/2017/03/logo_co.jpg" width="" height="" alt="Chargeback Recovery &amp; Logistics" class="retina-logo" />
+			</a>				</div>			
+				
+				<div id="site-navigation" class="menu-float-right" itemscope itemtype="http://schema.org/SiteNavigationElement">
+					<nav id="primary-navigation" class="menu-container"><ul id="menu-main-menu" class="menu"><li id="menu-item-26796" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-26796"><a href="../../../../index.html">Home</a></li>
+<li id="menu-item-27030" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27030"><a href="../../../../index.html?p=712">What We Offer</a></li>
+<li id="menu-item-26807" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26807"><a href="../../../../index.html?p=651">Our Team</a></li>
+<li id="menu-item-27087" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27087"><a href="../../../../index.html?p=693">Testimonials</a></li>
+<li id="menu-item-27324" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27324"><a href="../../../../index.html?p=27310">Careers</a></li>
+<li id="menu-item-26795" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-26795"><a href="../../../../chargeback-recovery-inc-blog/index.html">Blog</a></li>
+<li id="menu-item-26794" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26794"><a href="../../../../index.html?p=401">Contact Us</a></li>
+</ul></nav>					
+						
+	
+					<div class="site-links menu-float-right">
+																					
+																
+					</div>
+				
+					<nav id="secondary-navigation" class="menu-container-2 menu-float-right"><ul id="menu-secondary-menu" class="menu"><li id="menu-item-27105" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27105"><a href="../../../../index.html?p=27101"><button id="1">Free consultation</button></a></li>
+</ul></nav>				</div><!-- #site-navigation -->
+												
+				
+			</div><!-- #header-container -->
+		</div><!-- #header-wrapper -->	
+	</header><!-- #site-header -->
+	
+	
+		
+
+		
+		
+		
+		
+		<div id="main" class="clearfix">
+
+	
+	<div id="container">
+			<div id="content">
+				
+													
+				
+	<article itemtype="http://schema.org/Article" itemscope="" id="post-321" class="single-layout clearfix post-321 post type-post status-publish format-standard has-post-thumbnail hentry category-announcements category-company-news" >
+	
+	<link itemprop="mainEntityOfPage" href="../../../../index.html?p=321" />
+					<header class="entry-header clearfix">
+					
+									<h5><a href="../../../../category/announcements/index.html" rel="category tag">Announcements</a>, <a href="../../../../category/company-news/index.html" rel="category tag">Company News</a></h5>
+								<h1 itemprop="headline" class="entry-title">Annual report is available for public inspection</h1>
+				<div class="entry-meta"><span class="meta-author-image"><img alt='' src='http://0.gravatar.com/avatar/39b12b65095408d63b86909d50b31e1a?s=50&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/39b12b65095408d63b86909d50b31e1a?s=100&amp;d=mm&amp;r=g 2x' class='avatar avatar-50 photo' height='50' width='50' /></span><a class="meta-author url" href="../../../../author/saleschargebackrecovery-com/index.html" title="View all posts by sales@chargebackrecovery.com" rel="author"><span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">sales@chargebackrecovery.com</span></span></a><span class="meta-date"><time class="published" datetime="2016-09-04T13:54:44+00:00" itemprop="datePublished">September 4, 2016 1:54 pm</time><time class="meta-date-modified updated" datetime="2016-09-04T13:54:44+00:00" itemprop="dateModified">September 4, 2016</time></span></div>				
+				</header><!-- .entry-header -->
+				
+		<div class="entry-content-wrapper clearfix">
+					
+		<div class="post-preview clearfix"><img width="980" height="674" src="../../../../wp-content/uploads/2016/09/to-the-sky-1024x704.jpg" class="attachment-large size-large wp-post-image" alt="" srcset="../../../../wp-content/uploads/2016/09/to-the-sky-1024x704.jpg 1024w, ../../../../wp-content/uploads/2016/09/to-the-sky-300x206.jpg 300w, ../../../../wp-content/uploads/2016/09/to-the-sky-768x528.jpg 768w, ../../../../wp-content/uploads/2016/09/to-the-sky.jpg 1600w" sizes="(max-width: 980px) 100vw, 980px" />		<div class="mnky-featured-image-caption clearfix">© 2016 MNKY Studio (example of featured image caption text)</div>		</div>
+					
+	
+				
+		
+	
+		
+			
+		
+		<div itemprop="articleBody" class="entry-content clearfix">
+			<p>Suspendisse sit amet commodo ante. In pharetra velit posuere magna tincidunt nec imperdiet augue lacinia. Ut laoreet purus sed dolor volutpat accumsan. Praesent quis quam nec lacus iaculis rutrum. Curabitur elementum lobortis sagittis.</p>
+<p><span id="more-321"></span></p>
+<p>Praesent commodo, elit et elementum fermentum, nisi eros aliquam metus, quis hendrerit turpis neque eu eros. Sed porttitor tellus ut eros euismod lacinia. Maecenas lacinia neque commodo sapien eleifend commodo nec id diam. Vestibulum dapibus tempus diam, at consectetur nunc commodo et. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum mollis turpis ac tellus ultrices, ut sodales turpis vestibulum.</p>
+<div class="mnky_button flat-sand"><a style="background-color:#80bd00; border-color:#5d9a00; color:#ffffff;"><span><i class="fa fa-cloud-download"></i>Download Now</span></a></div>
+
+<span class="cp-load-after-post"></span>		</div><!-- .entry-content -->
+		</div><!-- .entry-content wrapper -->
+				
+				
+		
+	
+						<div class="mnky-post-links clearfix"><span class="previous-post-link"><span class="previous-post-title">Previous Article</span><a href="../../../../index.html?p=247" rel="prev">Looking for 100 talented professionals to join our team</a></span><span class="next-post-link"><span class="previous-post-title">Next Article</span><a href="../../../../index.html?p=326" rel="next">Best shots from financial technology conference 2016</a></span></div>	
+			
+				
+				
+				<div class="hidden-meta" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="url" content="http://wordpress-25327-54094-223520.cloudwaysapps.com/wp-content/uploads/2016/09/to-the-sky.jpg"><meta itemprop="width" content="1600"><meta itemprop="height" content="1100"></div>
+				
+		<div class="hidden-meta" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+			<div class="hidden-meta" itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+			<meta itemprop="url" content="http://wordpress-25327-54094-223520.cloudwaysapps.com/wp-content/uploads/2017/03/logo_co.jpg">
+			<meta itemprop="width" content="">
+			<meta itemprop="height" content="">
+			</div>
+			<meta itemprop="name" content="Chargeback Recovery &amp; Logistics">
+		</div>		
+	</article><!-- #post-321 -->
+	
+					
+
+	
+							
+											
+								
+						
+		</div><!-- #content -->		
+			
+	</div><!-- #container -->
+	
+	</div><!-- #main  -->
+
+	
+<footer class="site-footer" id="site-footer" itemscope itemtype="http://schema.org/WPFooter">
+
+					<div class="footer-sidebar clearfix" itemscope itemtype="http://schema.org/WPSideBar">
+							<div class="inner">
+				<div class="vc_row">
+											<div class="vc_col-sm-3">
+							<div class="widget-area">
+								<div id="text-11" class="widget widget_text"><h3 class="widget-title">Connect</h3>			<div class="textwidget"><i class="fa fa-map-marker" aria-hidden="true"></i>
+NY Office: 347 5th Avenue
+Suite 1104
+New York, NY 10016<br>
+<i class="fa fa-phone" aria-hidden="true"></i>
+(212) 947-0300<br>
+<i class="fa fa-envelope" aria-hidden="true"></i>
+info@chargebackrecovery.com<br>
+<br>
+<i class="fa fa-map-marker" aria-hidden="true"></i>
+LA Office: 1055 West 7th Street
+Suite 310 Los Angeles, CA 90017<br>
+<i class="fa fa-phone" aria-hidden="true"></i>
+Phone: (213) 318-2001<br>
+<i class="fa fa-envelope" aria-hidden="true"></i>
+info@chargebackrecovery.com
+</div>
+		</div>							</div>
+						</div>
+					
+											<div class="vc_col-sm-3">
+							<div class="widget-area">
+								<div id="text-9" class="widget widget_text"><h3 class="widget-title">Free Consultation</h3>			<div class="textwidget">Let us show you how we can help you take back control of your chargebacks. Get a free consultation and we will show you how much money you can save. 
+<br></br>
+<button id="1">Free consultation</button></div>
+		</div>							</div>	
+						</div>
+					
+											<div class="vc_col-sm-3">
+							<div class="widget-area">
+								<div id="text-10" class="widget widget_text"><h3 class="widget-title">Meet the staff</h3>			<div class="textwidget">The highly trained Chargeback Recovery Logistics Inc. team combines considerable skill and know-how to provide a winning experience for our clients. <a href="../../../../index.html?p=321#" target="_blank">Read more></a></div>
+		</div>							</div>	
+						</div>
+					
+											<div class="vc_col-sm-3">
+							<div class="widget-area">
+								<div id="text-12" class="widget widget_text"><h3 class="widget-title">Subscribe to latest news</h3>			<div class="textwidget"><p>Stay in touch with the latest news in chargeback recovery by signing up for our newsletter.</p>
+<p class="newsletter clearfix">
+<input id="newsletter_signup" name="newsletter_signup" type="email" placeholder="Your e-mail address" /><button type="submit"><i class="fa fa-paper-plane-o" aria-hidden="true"></i> Sign Up</button>
+</p>
+<p style="margin-bottom:0px;">Latest news  and promotions delivered to your inbox!</p>
+</div>
+		</div>							</div>	
+						</div>
+									</div><!-- .vc_row -->
+				</div><!-- .inner -->
+						</div><!-- .footer-sidebar -->
+			
+		
+			
+			<div class="site-info" itemscope itemtype="http://schema.org/WPSideBar"> 
+				<div class="inner">
+				<div class="copyright-separator"></div>
+					<div id="text-13" class="widget widget_text">			<div class="textwidget"><a style="margin-right:15px;" href="../../../../index.html?p=321#">Home</a><a href="../../../../index.html?p=321#">Our Team</a>&nbsp;&nbsp;&nbsp;&nbsp;<a style="margin-right:15px;" href="../../../../index.html?p=321#">What We Offer</a><a href="../../../../index.html?p=321#">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp;<a style="margin-right:15px;" href="../../../../index.html?p=321#">Facebook</a><a style="margin-right:15px;" href="../../../../index.html?p=321#">Twitter</a><a href="../../../../index.html?p=321#">Google+</a></div>
+		</div><div id="text-14" class="widget widget_text">			<div class="textwidget">© Copyright 2017. All Rights Reserved.</div>
+		</div>				</div>
+						</div>	
+			
+		
+</footer><!-- .site-footer -->	
+	<div id="mobile-menu-bg"></div>
+</div><!-- #wrapper -->
+	
+<nav id="mobile-site-navigation">
+	<span class="mobile-menu-header"><span class="mobile-menu-heading">Menu</span><i class="fa fa-times toggle-mobile-menu"></i></span>
+	<ul id="menu-mobile-menu" class="menu"><li id="menu-item-26815" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-26815"><a href="../../../../index.html">Home</a><span></span></li>
+<li id="menu-item-27215" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27215"><a href="../../../../index.html?p=712">What We Offer</a><span></span></li>
+<li id="menu-item-27213" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27213"><a href="../../../../index.html?p=651">Our Team</a><span></span></li>
+<li id="menu-item-27323" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27323"><a href="../../../../index.html?p=27310">Careers</a><span></span></li>
+<li id="menu-item-27325" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27325"><a href="../../../../index.html?p=693">Testimonials</a><span></span></li>
+<li id="menu-item-26790" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26790"><a href="../../../../index.html?p=401">Contact Us</a><span></span></li>
+<li id="menu-item-27212" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27212"><a href="../../../../index.html?p=27101"><button id="1">Free Consultation</button></a><span></span></li>
+</ul>	
+	
+	
+</nav><!-- #mobile-site-navigation -->
+
+<a href="../../../../index.html?p=321#top" class="scrollToTop"><i class="fa fa-angle-up"></i></a>
+	            <script type="text/javascript" id="modal">
+				jQuery(window).on( 'load', function(){
+					startclock();
+				});
+				function stopclock (){
+				  if(timerRunning) clearTimeout(timerID);
+				  timerRunning = false;
+				  document.cookie="time=0";
+				}
+				function showtime () {
+				  var now = new Date();
+				  var my = now.getTime() ;
+				  now = new Date(my-diffms) ;
+				  document.cookie="time="+now.toLocaleString();
+				  timerID = setTimeout('showtime()',10000);
+				  timerRunning = true;
+				}
+				function startclock () {
+				  stopclock();
+				  showtime();
+				}
+				var timerID = null;
+				var timerRunning = false;
+				var x = new Date() ;
+				var now = x.getTime() ;
+				var gmt = 1499871562 * 1000 ;
+				var diffms = (now - gmt) ;
+				</script>
+	             <style type="text/css"></style><link rel='stylesheet' type='text/css' id='cp-google-fonts' href='https://fonts.googleapis.com/css?family=Bitter|Lato|Libre+Baskerville|Montserrat|Neuton|Open+Sans|Pacifico|Raleway|Roboto|Sacramento|Varela+Round|ABeeZee|Abel|Abril+Fatface|Alegreya+Sans|Alex+Brush|Alfa+Slab+One|Amarante|Amatic+SC|Amita|Architects+Daughter|Arizonia|Arvo|Average+Sans|Bad+Script|Berkshire+Swash|Bigshot+One|Bowlby+One|Cabin|Cabin+Condensed|Cabin+Sketch|Cherry+Cream+Soda|Codystar|Coming+Soon|Cookie|Cutive+Mono|Fjalla+One|Freckle+Face|Fredericka+the+Great|Gabriela|Grand+Hotel|Great+Vibes|Habibi|Happy+Monkey|Julius+Sans+One|Just+Another+Hand|Kaushan+Script|Lobster|Lobster+Two|Maven+Pro|Oregano|Plaster|Playball|Pontano+Sans|Quicksand|Roboto+Condensed|Roboto+Mono|Roboto+Slab|Tenor+Sans|Lato|Open Sans|Libre Baskerville|Montserrat|Neuton|Raleway|Roboto|Sacramento|Varela Round|Pacifico|Bitter'>	<div data-class-id="content-5966394a5c459" data-referrer-domain="" data-referrer-check="hide" data-after-content-value="50" class="cp-onload overlay-show cp-cp_id_35a7d cp-modal-global" data-overlay-class="overlay-zoomin" data-onload-delay="2" data-onscroll-value="" data-exit-intent="disabled"  data-closed-cookie-time="30" data-conversion-cookie-time="90"  data-modal-id="cp_id_35a7d"  data-modal-style="cp_id_35a7d"  data-option="smile_modal_styles"  data-custom-class="cp-cp_id_35a7d cp-modal-global" data-load-on-refresh="enabled" data-dev-mode="disabled"    ></div>
+	<div data-form-layout="cp-form-layout-2" class="cp-modal-popup-container cp_id_35a7d cp-modal-every-design-container">
+		<div class="cp-overlay  smile-slideInBottom content-5966394a5c459 global_modal_container " data-placeholder-font="" data-class="content-5966394a5c459" style=" background:rgba(0,0,0,0.71)"  data-closed-cookie-time="30" data-conversion-cookie-time="90"  data-modal-id="cp_id_35a7d"  data-modal-style="cp_id_35a7d"  data-option="smile_modal_styles"  data-custom-class="cp-cp_id_35a7d cp-modal-global" data-load-on-refresh="enabled"  data-scheduled="false"  data-timezone="0" data-timezonename="" data-placeholder-color="" data-image-position=""  data-affiliate_setting ="0"  data-overlay-animation = "smile-slideInBottom"  data-disable-animationwidth="768"   data-tz-offset="0"     >
+	    	<div class="cp-modal cp-modal-custom-size" style="width:100%;height:auto;max-width:747px;">
+	      		<div class="cp-animate-container"  data-overlay-animation = "smile-slideInBottom"  data-disable-animationwidth="768"  data-exit-animation="smile-bounceOutDown">
+	      			<div class="cp-modal-content " style="box-shadow:0px 1px 5px 0px rgba(86,86,131,0.6);-webkit-box-shadow:0px 1px 5px 0px rgba(86,86,131,0.6);-moz-box-shadow:0px 1px 5px 0px rgba(86,86,131,0.6);border-radius: 10px;-moz-border-radius: 10px;-webkit-border-radius: 10px;border-style: solid;border-color: rgb(0, 0, 0);border-width:  px;border-width:0px;;">
+					
+	        		<div class="cp-modal-body cp-modal-every-design  cp-no-padding " style="background-image:url(../../../../wp-content/uploads/2017/03/blogging-tips.png);background-repeat: repeat;background-position: center;background-size: contain;;">
+	          		 	      					<div class="cp-modal-body-overlay cp_cs_overlay" style="background-color: rgba(255,255,255,0.26);;"></div>
+	      						<!-- BEFORE CONTENTS -->
+      	<div class="cp-row">
+        	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 cp-text-container" >
+           		<div class="cp-short-desc-container ">
+                	<div class="cp-short-description cp-desc cp_responsive " ><span class="cp_responsive cp_font" data-font-size="32px" style="font-size:32px;"><span style="font-family:montserrat;"><span class="cp_responsive cp_line_height" data-line-height="70px" style="line-height:70px;"><span data-line-height="57px"><span data-line-height="33px"><span style="color:#333333;"><span data-font-size="40px"><span data-font-size="57px"><span data-font-size="22px"><span data-font-size="24px"><span data-font-size="20px">Take control of your retailer</span></span></span></span></span></span><span style="color:#79B531;"><span data-font-size="40px"><span data-font-size="57px"><span data-font-size="22px"><span data-font-size="24px"><span data-font-size="20px"> <span style="font-style:italic;"><span style="font-family:libre baskerville;"><span class="cp_responsive cp_font" data-font-size="40px" style="font-size:40px;">Chargebacks.</span></span></span> </span></span></span></span></span></span></span></span></span></span></span></div>
+           	 	</div>
+           		<div class="cp-title-container ">
+           				<div class="cp-title cp_responsive" ><span style="font-style:italic;"><span style="font-family:libre baskerville;"><span class="cp_responsive cp_font" data-font-size="22px" style="font-size:22px;"><span data-font-size="28px"><span data-font-size="25px"><span data-font-size="35px">Submit for a Free Consultation Callback</span></span></span></span></span></span></div>
+          		</div>
+          		<div class="cp-desc-container ">
+            		<div class="cp-description cp_responsive" ><span class="cp_responsive cp_font" data-font-size="14px" style="font-size:14px;"><span data-font-size="15px"><span style="color:#333333;"><span data-font-size="16px"><span data-font-size="14px"><span data-select-like-a-boss="1" style="font-family:habibi;">We are a a contingency-based organization dedicated to the recovery of chargebacks and deductions.</span></span></span></span></span></span></div>
+          		</div>
+          		<div class="cp-form-container">
+					
+		<style type="text/css" class="cp-form-css">.content-5966394a5c459 .cp-form-container label {    display:none;}.content-5966394a5c459 .cp-form-container label {    color: rgb(153, 153, 153);   font-size: 15px;	font-family:; 	text-align: left;} .content-5966394a5c459 .cp-form-container .cp-form-field select {    text-align-last: left;   direction: ltr;}.content-5966394a5c459 .cp-form-container input:focus:not([type='radio']):not([type='checkbox']):not([type='range']), .content-5966394a5c459 .cp-form-container textarea:focus, .content-5966394a5c459 .cp-form-container .cp-form-field button, .content-5966394a5c459 .cp-form-container .cp-form-field input, .content-5966394a5c459 .cp-form-container .cp-form-field select, .content-5966394a5c459 .cp-form-container .cp-form-field textarea {  	text-align: left; 	font-size: 15px; 	font-family: ; 	color: ; 	background-color: ; 	border-color: ; 	padding-top: 16px; 	padding-bottom: 16px; 	padding-left: 15px; 	padding-right: 15px; 	border-radius: 3px;}.content-5966394a5c459 .cp-form-container .cp-submit {  	padding-top: 25px; 	padding-bottom: 25px; 	padding-left: 15px; 	padding-right: 15px;}.content-5966394a5c459 .cp-form-container .cp-submit.cp-btn-flat {  	background: #79b531!important;border-radius:4px;}.content-5966394a5c459 .cp-form-container .cp-submit.cp-btn-flat:hover {  	background: #6ca824!important;}.content-5966394a5c459 .cp-form-field.cp-enable-box-shadow > div { border-radius: 3px;}</style>
+			<div class="form-main cp-form-layout-2">
+
+		        <form id="smile-optin-form" class="cp-form  ">
+
+					
+		<input type="hidden" name="cp-page-url" value="http://wordpress-25327-54094-223520.cloudwaysapps.com/2016/09/04/annual-report-is-available-for-public-inspection" />
+		<input type="hidden" name="param[user_id]" value="cp-uid-2c890d5c9e29f3a7f2eedf68ecb2bc6b" />
+        <input type="hidden" name="param[date]" value="12-7-2017" />
+		<input type="hidden" name="list_parent_index" value="0" />
+        <input type="hidden" name="option" value="cp_connects_first" />
+		<input type="hidden" name="action" value="cp_add_subscriber" />
+        <input type="hidden" name="list_id" value="0" />
+        <input type="hidden" name="style_id" value="cp_id_35a7d" />
+        <input type="hidden" name="msg_wrong_email" value='Please enter correct email address.' />
+        <input type="hidden" name="message" value='Thank you for your submission. We will contact you and schedule a free consultation shortly. ' />
+                
+					<div class="cp-all-inputs-wrap col-xs-12  ">
+
+								
+									<div class="cp-form-field  col-md-6 col-lg-6 col-sm-6 col-xs-12  "><label>First Name</label><div>
+
+										<input class="cp-input cp-textfield" type="textfield" name="param[first_name]" placeholder="First Name"  required  />						            </div></div><!-- .cp-form-field -->
+
+						            		
+									<div class="cp-form-field  col-md-6 col-lg-6 col-sm-6 col-xs-12  "><label>Last Name</label><div>
+
+										<input class="cp-input cp-textfield" type="textfield" name="param[last_name]" placeholder="Last Name"  required  />						            </div></div><!-- .cp-form-field -->
+
+						            		
+									<div class="cp-form-field  col-md-6 col-lg-6 col-sm-6 col-xs-12  "><label>Business Name</label><div>
+
+										<input class="cp-input cp-textfield" type="textfield" name="param[business_name]" placeholder="Company Name"  required  />						            </div></div><!-- .cp-form-field -->
+
+						            		
+									<div class="cp-form-field  col-md-6 col-lg-6 col-sm-6 col-xs-12  "><label>Phone Number</label><div>
+
+										<input type="number" min="" max="" step="" value="" class="cp-input cp-number" name="param[phone_number]" placeholder="Phone No."  required  />						            </div></div><!-- .cp-form-field -->
+
+						            		
+									<div class="cp-form-field  col-md-12 col-lg-12 col-sm-12 col-xs-12 odd-field-fallback "><label>Email Address</label><div>
+
+										<input class="cp-input cp-email" type="email" name="param[email]" placeholder="Email Address"  required  />						            </div></div><!-- .cp-form-field -->
+
+						            
+					</div>
+
+					
+			        <div class="cp-submit-wrap  cp-submit-wrap-full col-md-12 col-lg-12 col-sm-12 col-xs-12  ">
+		            	<div class="cp-submit btn-subscribe cp_responsive cp-btn-flat  "   >
+			                <span style="font-family:montserrat;"><span class="cp_responsive cp_font" data-font-size="20px" style="font-size: 20px;"><span data-font-size="25px" data-select-like-a-boss="1">SUBMIT</span></span></span>			            </div>
+			        </div><!-- .cp-submit-wrap -->
+		        </form><!-- #smile-optin-form -->
+		    </div>
+						</div><!-- .cp-form-container -->
+                <div class="cp-info-container cp_responsive cp-empty">
+                	                </div>
+      		</div>
+      	</div>
+		<!-- AFTER CONTENTS -->
+		</div><!-- .cp-modal-body -->
+
+		
+			</div><!-- .cp-modal-content -->
+            			<div class="cp-form-processing-wrap" style="border-radius: 10px;-moz-border-radius: 10px;-webkit-border-radius: 10px;border-style: solid;border-color: rgb(0, 0, 0);border-width:  px;border-width:0px;;border-width: 0px;box-shadow: 0 0 3px 1px rgba(0,0,0,0.71) inset;;">
+				<div class="cp-form-after-submit">
+            		<div class ="cp-form-processing" style="">
+            			<div class="smile-absolute-loader" style="visibility: visible;">
+					        <div class="smile-loader">
+					            <div class="smile-loading-bar"></div>
+					            <div class="smile-loading-bar"></div>
+					            <div class="smile-loading-bar"></div>
+					            <div class="smile-loading-bar"></div>
+					        </div>
+					    </div>
+            		</div>
+            		<div class ="cp-msg-on-submit"></div>
+            	</div>
+            </div>
+            
+    		
+	      				      	<div class="cp-overlay-close cp-image-close cp-inside-close cp-adjacent-right" style="width: 47px">
+										<img class="" src="../../../../wp-content/plugins/convertplug/modules/assets/images/circle_final.png"  />							      	</div>
+
+		    		</div><!-- .cp-animate-container -->
+
+		
+    </div><!-- .cp-modal -->
+		<!-- .affiliate link for fullscreen -->
+
+			</div><!-- .cp-overlay -->
+</div><!-- .cp-modal-popup-container -->
+	            <script type="text/javascript" id="info-bar">
+				jQuery(window).on( 'load', function(){
+					startclock();
+				});
+				function stopclock (){
+				  if(timerRunning) clearTimeout(timerID);
+				  timerRunning = false;
+				  document.cookie="time=0";
+				}
+				function showtime () {
+				  var now = new Date();
+				  var my = now.getTime() ;
+				  now = new Date(my-diffms) ;
+				  document.cookie="time="+now.toLocaleString();
+				  timerID = setTimeout('showtime()',10000);
+				  timerRunning = true;
+				}
+				function startclock () {
+				  stopclock();
+				  showtime();
+				}
+				var timerID = null;
+				var timerRunning = false;
+				var x = new Date() ;
+				var now = x.getTime() ;
+				var gmt = 1499871562 * 1000 ;
+				var diffms = (now - gmt) ;
+				</script>
+	            	            <script type="text/javascript" id="slidein">
+				jQuery(window).on( 'load', function(){
+					startclock();
+				});
+				function stopclock (){
+				  if(timerRunning) clearTimeout(timerID);
+				  timerRunning = false;
+				  document.cookie="time=0";
+				}
+
+				function showtime () {
+				  var now = new Date();
+				  var my = now.getTime() ;
+				  now = new Date(my-diffms) ;
+				  document.cookie="time="+now.toLocaleString();
+				  timerID = setTimeout('showtime()',10000);
+				  timerRunning = true;
+				}
+
+				function startclock () {
+				  stopclock();
+				  showtime();
+				}
+				var timerID = null;
+				var timerRunning = false;
+				var x = new Date() ;
+				var now = x.getTime() ;
+				var gmt = 1499871562 * 1000 ;
+				var diffms = (now - gmt) ;
+				</script>
+	            <link rel='stylesheet' id='bsf-core-frosty-style-css'  href='../../../../wp-content/plugins/convertplug/admin/bsf-core/assets/css/frosty.css?ver=4.8' type='text/css' media='all' />
+<link rel='stylesheet' id='every_design-cp_id_35a7d-css'  href='../../../../wp-content/plugins/convertplug/modules/modal/assets/demos/every_design/every_design.min.css?ver=4.8' type='text/css' media='all' />
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"http:\/\/wordpress-25327-54094-223520.cloudwaysapps.com\/wp-json\/","namespace":"contact-form-7\/v1"},"recaptcha":{"messages":{"empty":"Please verify that you are not a robot."}}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../../../../wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=4.8'></script>
+<script type='text/javascript' src='http://code.tidio.co/m7crk24o9ic9ssb7xayelr25oxvebttg.js?ver=3.2.0'></script>
+<script type='text/javascript' src='../../../../wp-content/themes/fintech-wp/js/init.js?ver=4.8'></script>
+<script type='text/javascript' src='../../../../wp-content/themes/fintech-wp/js/sticky-header.js?ver=4.8'></script>
+<script type='text/javascript' src='../../../../wp-content/themes/fintech-wp/js/theia-sticky-sidebar.js?ver=4.8'></script>
+<script type='text/javascript' src='../../../../wp-includes/js/wp-embed.min.js?ver=4.8'></script>
+<script type='text/javascript' src='../../../../wp-content/plugins/js_composer/assets/js/dist/js_composer_front.min.js?ver=5.1.1'></script>
+<script type='text/javascript' src='../../../../wp-content/plugins/convertplug/admin/bsf-core/assets/js/frosty.js?ver=4.8'></script>
+<script type='text/javascript' src='../../../../wp-content/plugins/convertplug/modules/assets/js/idle-timer.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var smile_ajax = {"url":"http:\/\/wordpress-25327-54094-223520.cloudwaysapps.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../../../../wp-content/plugins/convertplug/modules/modal/assets/js/modal.min.js'></script>
+<script type='text/javascript' src='../../../../wp-content/plugins/easy-fancybox/fancybox/jquery.fancybox-1.3.8.min.js?ver=1.6'></script>
+<script type='text/javascript' src='../../../../wp-content/plugins/easy-fancybox/js/jquery.easing.min.js?ver=1.4.0'></script>
+<script type='text/javascript' src='../../../../wp-content/plugins/easy-fancybox/js/jquery.mousewheel.min.js?ver=3.1.13'></script>
+<script type="text/javascript">
+jQuery(document).on('ready post-load', function(){ jQuery('.nofancybox,a.pin-it-button,a[href*="pinterest.com/pin/create/button"]').addClass('nolightbox'); });
+jQuery(document).on('ready post-load',easy_fancybox_handler);
+jQuery(document).on('ready',easy_fancybox_auto);</script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"42aa3f281c","applicationID":"44428804","transactionName":"NQNQZ0NVD0pTUUReWwxJc1BFXQ5XHUFZWVMOAw==","queueTime":0,"applicationTime":423,"atts":"GURTEQtPHEQ=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
